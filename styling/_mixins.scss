@@ -1,0 +1,29 @@
+@mixin snowflake($position, $delay) {
+    width: 1vw;
+    height: 1vw;
+    background-color: white;
+    border-radius: 100%;    
+    position: absolute;
+    right: $position;
+    animation: descent 5s $delay linear infinite forwards;
+}
+@mixin ribbon($color) {
+    width: $baseMeasure;
+    height: 5 * $baseMeasure;
+    background-color: $color;
+    transform: translateX(2 * $baseMeasure);
+}
+@mixin gift($color) {
+    width: 5 * $baseMeasure;
+    height: 5 * $baseMeasure;
+    background-color: $color;
+    position: absolute;
+    bottom: 30vh;
+}
+@mixin ornaments($delay) {
+    width: 2 * $baseMeasure;
+    height: 2 * $baseMeasure;
+    position: absolute;
+    border-radius: 100%;
+    animation: rainbow 8s $delay linear infinite;
+}

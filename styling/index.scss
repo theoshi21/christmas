@@ -1,0 +1,133 @@
+// table of contents
+// 1. variables
+// 2. mixins
+// 3. animations
+// 4. background
+// 5. tree
+// 6. presents
+
+
+// 1. variables
+:root {
+    --base-measure: 1.5vw;
+}
+// @media screen and (min-width: 720px) {
+//     :root {
+//         --base-measure: 1vw;
+//     }
+// }
+@import "./variables";
+
+// 2. mixins
+@import "./mixins";
+
+// 3. animations
+@import "./animations";
+
+
+// 4. background
+.moon {
+    width: 10vw;
+    height: 10vw;
+    background: $moonColor;
+    border-radius: 100%;
+    position: absolute;
+    top: 5vh;
+    left: 5vh;
+}
+.snow {
+    height: 30vh;
+    width: 100vw;
+    background: $snowColor;
+    position: absolute;
+    bottom: 0px;
+    font-size: 5vw;
+    text-align: center;
+}
+.snow::after {
+    content: "Jacob Shomali";
+    animation: rainbowText 5s forwards infinite;
+}
+body {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-content: center;
+    background: $skyColor;
+}
+
+.snowFlake1 {
+    @include snowflake(15vw, 0s);
+}
+.snowFlake2 {
+    @include snowflake(25vw, -2s);
+}
+.snowFlake3 {
+    @include snowflake(35vw, -3s);
+}
+.snowFlake4 {
+    @include snowflake(70vw, -4s);
+}
+
+// 5. tree
+.trunk {
+    width: 10 * var(--base-measure);
+    height: 20 * var(--base-measure);
+    background: $trunkColor;
+    position: absolute;
+    bottom: 30vh;
+    z-index: 1;
+}
+.leaves {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: -12vw;
+    left: -10 * var(--base-measure);
+    border-bottom: 20 * var(--base-measure) solid green;
+    border-left: 15 * var(--base-measure) solid transparent;
+    border-right: 15 * var(--base-measure) solid transparent;
+    border-top: 0vw solid transparent;
+    z-index: 2;
+}
+.ornament1 {
+    @include ornaments(0s);
+    top: 15 * var(--base-measure);
+    left: 3 * var(--base-measure);
+}
+.ornament2 {
+    @include ornaments(-2s);
+    top: 13 * var(--base-measure);
+    right: 2 * var(--base-measure);
+
+}
+.ornament3 {
+    @include ornaments(-4s);
+    top: 5 * var(--base-measure);
+    right: -1 * var(--base-measure);
+}
+
+// 6. presents
+.gift1 {
+    @include gift(red);
+    transform: translate(7.5 * var(--base-measure));
+}
+.gift2 {
+    @include gift(green);
+    transform: translate(-7.5 * var(--base-measure));
+}
+.gift3 {
+    @include gift(purple);
+    transform: translateX(7.5 * var(--base-measure)) translateY(-5 * var(--base-measure));
+}
+.ribbon1 {
+    @include ribbon(green);
+}
+.ribbon2 {
+    @include ribbon(purple);
+}
+.ribbon3 {
+    @include ribbon(red);
+}
+
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> SURPRISE </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURPRISE</title>
+    <link rel="icon" type="image/png" href="snowman.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Mountains of Christmas', serif;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 180px); /* Increased box size */
+            gap: 20px; /* Increased gap between boxes */
+            position: relative;
+        }
+
+        .box {
+            width: 180px; /* Increased box size */
+            height: 180px; /* Increased box size */
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            overflow: hidden; /* Hide overflowing image */
+        }
+
+        .box img {
+            width: 100%; /* Make the image width 100% of the box */
+            height: 100%; /* Make the image height 100% of the box */
+            object-fit: cover; /* Maintain aspect ratio and cover the entire box */
+        }
+
+        .overlay-text {
+            position: absolute;
+            margin-top: 5vh;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px; /* Adjusted font size */
+            font-weight: bold;
+            color: #c21807;
+            pointer-events: none; /* Allow clicks to pass through the overlay */
+            animation: christmasAnimation 5s infinite; /* Added animation */
+        }
+
+        @keyframes christmasAnimation {
+            0%, 100% {
+                color: #c21807;
+                opacity: 0;
+            }
+            50% {
+                color: #0d47a1;
+                opacity: 1;
+            }
+        }
+
+        .goback-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: 0.5s;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .goback-button:hover {
+            background-color: #ed2939;
+        }
+    </style>
+</head>
+<body>
+    <button class="goback-button" onclick="goBack()">GO BACK</button>
+    <div class="grid">
+        <div class="box" onclick="displayPhoto(this, 'pics/photo1.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo2.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo3.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo4.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo5.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo6.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo7.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo8.jpg')"></div>
+        <div class="box" onclick="displayPhoto(this, 'pics/photo9.jpg')"></div>
+    </div>
+
+    <script>
+        function displayPhoto(box, photo) {
+            // Create an image element
+            var img = document.createElement("img");
+
+            // Set the source attribute to the photo
+            img.src = photo;
+
+            // Set the alt attribute (you can customize this)
+            img.alt = "Displayed Photo";
+
+            // Replace the content of the clicked box with the image
+            box.innerHTML = '';
+            box.appendChild(img);
+
+            // Check if all boxes have images
+            if (document.querySelectorAll('.box img').length === 9) {
+                showOverlayText();
+            }
+        }
+
+        function showOverlayText() {
+            // Show a text on top of the page
+            var overlayText = document.createElement("div");
+            overlayText.className = "overlay-text";
+            overlayText.innerHTML = "Merry Christmas! XDDDD";
+            document.body.appendChild(overlayText);
+        }
+
+        function goBack() {
+            // Navigate to another HTML page (replace 'yourpage.html' with the actual filename)
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@keyframes rainbow {
+    0% { background-color: purple;}
+    14% { background-color: indigo;}
+    28% { background-color: blue;}
+    56% { background-color: yellow;}
+    75% { background-color: orange;}
+    84% { background-color: red;}
+    100% { color: purple;}
+}
+@keyframes rainbowText {
+    0% { color: purple;}
+    14% { color: indigo;}
+    28% { color: blue;}
+    42% { color: green;}
+    56% { color: yellow;}
+    70% { color: orange;}
+    84% { color: red;}
+    100% { color: purple;}
+}
+@keyframes descent {
+    0% { top: 0vh }
+    20% { transform: translateX(-1vw); }
+    40% { transform: translateX(1vw); }
+    60% { transform: translateX(-1vw); }
+    80% { transform: translateX(1vw); }
+    100% { top: 70vh }
+}

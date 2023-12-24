@@ -1,0 +1,372 @@
+@-webkit-keyframes rainbow {
+  0% {
+    background-color: purple;
+  }
+  14% {
+    background-color: indigo;
+  }
+  28% {
+    background-color: blue;
+  }
+  56% {
+    background-color: yellow;
+  }
+  75% {
+    background-color: orange;
+  }
+  84% {
+    background-color: red;
+  }
+  100% {
+    color: purple;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: purple;
+  }
+  14% {
+    background-color: indigo;
+  }
+  28% {
+    background-color: blue;
+  }
+  56% {
+    background-color: yellow;
+  }
+  75% {
+    background-color: orange;
+  }
+  84% {
+    background-color: red;
+  }
+  100% {
+    color: purple;
+  }
+}
+
+@-webkit-keyframes rainbowText {
+  0% {
+    color: purple;
+  }
+  14% {
+    color: indigo;
+  }
+  28% {
+    color: blue;
+  }
+  42% {
+    color: green;
+  }
+  56% {
+    color: yellow;
+  }
+  70% {
+    color: orange;
+  }
+  84% {
+    color: red;
+  }
+  100% {
+    color: purple;
+  }
+}
+
+@keyframes rainbowText {
+  0% {
+    color: purple;
+  }
+  14% {
+    color: indigo;
+  }
+  28% {
+    color: blue;
+  }
+  42% {
+    color: green;
+  }
+  56% {
+    color: yellow;
+  }
+  70% {
+    color: orange;
+  }
+  84% {
+    color: red;
+  }
+  100% {
+    color: purple;
+  }
+}
+
+@-webkit-keyframes descent {
+  0% {
+    top: 0vh;
+  }
+  20% {
+    -webkit-transform: translateX(-1vw);
+            transform: translateX(-1vw);
+  }
+  40% {
+    -webkit-transform: translateX(1vw);
+            transform: translateX(1vw);
+  }
+  60% {
+    -webkit-transform: translateX(-1vw);
+            transform: translateX(-1vw);
+  }
+  80% {
+    -webkit-transform: translateX(1vw);
+            transform: translateX(1vw);
+  }
+  100% {
+    top: 70vh;
+  }
+}
+
+@keyframes descent {
+  0% {
+    top: 0vh;
+  }
+  20% {
+    -webkit-transform: translateX(-1vw);
+            transform: translateX(-1vw);
+  }
+  40% {
+    -webkit-transform: translateX(1vw);
+            transform: translateX(1vw);
+  }
+  60% {
+    -webkit-transform: translateX(-1vw);
+            transform: translateX(-1vw);
+  }
+  80% {
+    -webkit-transform: translateX(1vw);
+            transform: translateX(1vw);
+  }
+  100% {
+    top: 70vh;
+  }
+}
+
+.trunk {
+  width: 10vw;
+  height: 20vw;
+  background: linear-gradient(167.17122deg, #2c2121 -3.48985%, #6a3d40 81.95854%);
+  position: absolute;
+  bottom: 30vh;
+  z-index: 1;
+}
+
+.moon {
+  width: 10vw;
+  height: 10vw;
+  background: radial-gradient(circle, #e0e0e0, #b1b1b1);
+  border-radius: 100%;
+  position: absolute;
+  top: 5vh;
+  left: 5vh;
+}
+
+.snow {
+  font-family: 'Mountains of Christmas', serif;
+  height: 30vh;
+  width: 100vw;
+  background: linear-gradient(107.04637deg, #e9fff7 15.3875%, #d5f5fd 80.8875%);
+  position: absolute;
+  bottom: 0px;
+  font-size: 6vw;
+  text-align: center;
+}
+
+.snow::after {
+  content: " Kelvs";
+  -webkit-animation: rainbowText 5s forwards infinite;
+          animation: rainbowText 5s forwards infinite;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 90vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: -webkit-gradient(linear, left bottom, left top, from(#188ad0), to(#060c40));
+  background: linear-gradient(0deg, #188ad0, #060c40);
+}
+
+.leaves {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: -12vw;
+  left: -10vw;
+  border-bottom: 20vw solid green;
+  border-left: 15vw solid transparent;
+  border-right: 15vw solid transparent;
+  border-top: 0vw solid transparent;
+  z-index: 2;
+}
+
+.ornament1 {
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-animation: rainbow 8s 0s linear infinite;
+          animation: rainbow 8s 0s linear infinite;
+  top: 15vw;
+  left: 3vw;
+}
+
+.ornament2 {
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-animation: rainbow 8s -2s linear infinite;
+          animation: rainbow 8s -2s linear infinite;
+  top: 13vw;
+  right: 2vw;
+}
+
+.ornament3 {
+  width: 2vw;
+  height: 2vw;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-animation: rainbow 8s -4s linear infinite;
+          animation: rainbow 8s -4s linear infinite;
+  top: 5vw;
+  right: -1vw;
+}
+
+.gift1 {
+  width: 5vw;
+  height: 5vw;
+  background-color: red;
+  position: absolute;
+  bottom: 30vh;
+  -webkit-transform: translate(7.5vw);
+          transform: translate(7.5vw);
+}
+
+.gift2 {
+  width: 5vw;
+  height: 5vw;
+  background-color: green;
+  position: absolute;
+  bottom: 30vh;
+  -webkit-transform: translate(-7.5vw);
+          transform: translate(-7.5vw);
+}
+
+.gift3 {
+  width: 5vw;
+  height: 5vw;
+  background-color: purple;
+  position: absolute;
+  bottom: 30vh;
+  -webkit-transform: translateX(7.5vw) translateY(-5vw);
+          transform: translateX(7.5vw) translateY(-5vw);
+}
+
+.ribbon1 {
+  width: 1vw;
+  height: 5vw;
+  background-color: green;
+  -webkit-transform: translateX(2vw);
+          transform: translateX(2vw);
+}
+
+.ribbon2 {
+  width: 1vw;
+  height: 5vw;
+  background-color: purple;
+  -webkit-transform: translateX(2vw);
+          transform: translateX(2vw);
+}
+
+.ribbon3 {
+  width: 1vw;
+  height: 5vw;
+  background-color: red;
+  -webkit-transform: translateX(2vw);
+          transform: translateX(2vw);
+}
+
+.snowFlake1 {
+  width: 1vw;
+  height: 1vw;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  right: 15vw;
+  -webkit-animation: descent 5s 0s linear infinite forwards;
+          animation: descent 5s 0s linear infinite forwards;
+}
+
+.snowFlake2 {
+  width: 1vw;
+  height: 1vw;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  right: 25vw;
+  -webkit-animation: descent 5s -2s linear infinite forwards;
+          animation: descent 5s -2s linear infinite forwards;
+}
+
+.snowFlake3 {
+  width: 1vw;
+  height: 1vw;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  right: 35vw;
+  -webkit-animation: descent 5s -3s linear infinite forwards;
+          animation: descent 5s -3s linear infinite forwards;
+}
+
+.snowFlake4 {
+  width: 1vw;
+  height: 1vw;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  right: 70vw;
+  -webkit-animation: descent 5s -4s linear infinite forwards;
+          animation: descent 5s -4s linear infinite forwards;
+}
+/*# sourceMappingURL=index.css.map */
+
+.bottom {
+  margin-top: auto;
+  text-align: center;
+  padding: -5vh;
+  z-index: 99;
+}
+
+.pics {
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+.pics:hover{
+  background-color: #ed2939;
+}
